@@ -1,0 +1,48 @@
+@use "../global/" as g;
+
+.p- {
+  &downloads {
+    &__inner {
+      padding: 60px 0;
+    }
+
+    &__list {
+      &01 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: g.$gray04;
+        padding: 20px 30px;
+        margin-top: 50px;
+
+        &--item {
+          display: grid;
+          grid-template-columns: 123px 1fr;
+          gap: 7px;
+          align-items: center;
+        }
+
+        &--text {
+          &01 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 500 1.2rem g.$font-family03;
+            line-height: 1;
+            color: g.$white01;
+            background-color: g.$gray05;
+            padding: 6px;
+            min-height: 25px;
+          }
+
+          &02 {
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: g.$black01;
+          }
+        }
+      }
+    }
+  }
+}

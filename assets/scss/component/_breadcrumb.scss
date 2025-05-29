@@ -1,0 +1,53 @@
+@use "../global/" as g;
+
+.c-breadcrumb {
+  padding: 0 0 34px;
+  min-height: 146px;
+  background: url("../imgs/img-mv-pc-02.jpg") no-repeat center center / cover;
+
+  &__inner {
+    margin-bottom: 34px;
+    padding: 12px 0 9px;
+    background: #FFFFFF80;
+    backdrop-filter: blur(8px)
+  }
+
+  &__list {
+    display: flex;
+    gap: 14px;
+    list-style-type: none;
+
+  }
+
+  &__item {
+
+    &:not(:first-child) {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: g.$gray01;
+        margin: 1px 19px 0 0;
+        transform: translate(2px, 1px) rotate(25deg);
+      }
+    }
+
+    a,
+    span {
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1;
+      letter-spacing: 0.03em;
+    }
+
+    a {
+      text-decoration: none;
+      color: g.$blue01;
+    }
+
+    span {
+      color: g.$gray01;
+    }
+  }
+}

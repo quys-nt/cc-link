@@ -1,0 +1,50 @@
+$breakpoints: (
+  "sp": "screen and (max-width: 599px)",
+  "tab": "screen and (max-width: 1023px)",
+  "pc-tab": "screen and (min-width: 600px)",
+  "pc-only": "screen and (min-width: 1024px)",
+  "tab-only": "screen and (min-width: 600px) and (max-width: 1023px)",
+) !default;
+
+@mixin media($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$font-family01: "Noto Sans JP", sans-serif;
+$font-family02: "Roboto", sans-serif;
+$font-family03: "Inter", sans-serif;
+
+$white01: #ffffff;
+$black01: #2B2F35;
+$black02: #3B4043;
+$gray01: #818386;
+$gray02: #C4D4E5;
+$gray03: #D4D5D6;
+$gray04: #F2F6F7;
+$gray05: #8D96A6;
+$red01: #ff0000;
+$blue01: #003596;
+$blue02: #067DC8;
+$yellow01: #ffff00;
+
+$utility-color: (
+  white01: $white01,
+  black01: $black01,
+  black02: $black02,
+  gray01: $gray01,
+  gray02: $gray02,
+  gray03: $gray03,
+  gray04: $gray04,
+  red01: $red01,
+  blue01: $blue01,
+  blue02: $blue02,
+  yellow01: $yellow01,
+);
+
+$transition01: .3s;
+
+$opacity: .7;
+
+// 変数などは適宜追加・修正してください

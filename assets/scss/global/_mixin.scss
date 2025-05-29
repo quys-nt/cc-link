@@ -1,0 +1,29 @@
+@use "variables" as var;
+
+// mixinのスタイルを記述する
+@mixin hover01 {
+  &:hover {
+    opacity: var.$opacity;
+  }
+}
+
+@mixin positionBeforeAfter {
+  content: "";
+  position: absolute;
+}
+
+@mixin positionCenter--x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin positionCenter--y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin positionCenter--xy {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

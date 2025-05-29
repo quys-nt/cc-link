@@ -1,0 +1,188 @@
+@use "../global/" as g;
+
+.l- {
+  &header {
+    background-color: g.$white01;
+    padding: 17px 0 13px;
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__box {
+      &01 {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 18px;
+      }
+
+      &02 {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 15px;
+      }
+
+      &03 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &--wr {
+          display: inline-flex;
+          width: 1px;
+          height: 20px;
+          background-color: g.$gray02;
+          transform: rotate(25deg);
+        }
+      }
+
+      &04 {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+    }
+
+    &__link {
+      &01 {
+        position: relative;
+        font-family: g.$font-family02;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        color: g.$blue01;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        &:after {
+          content: "";
+          display: inline-flex;
+          width: 9px;
+          height: 9px;
+          background: url("../imgs/icon-arrow-down-small-01.svg") no-repeat center center / contain;
+        }
+      }
+
+      &02 {
+        @extend .l-header__link01;
+        gap: 5px;
+
+        &::before {
+          content: "";
+          display: inline-flex;
+          width: 16px;
+          height: 16px;
+          background: url("../imgs/icon-link-01.svg") no-repeat center center / contain;
+        }
+
+        &::after {
+          width: 12px;
+          height: 12px;
+          background: url("../imgs/icon-link-02.svg") no-repeat center center / contain;
+        }
+      }
+
+      &03 {
+        position: relative;
+        font-family: g.$font-family02;
+        font-weight: 600;
+        font-size: 1.3rem;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        color: g.$black01;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        &:hover {
+          color: g.$blue01;
+        }
+
+        &::before {
+          content: "";
+          display: inline-flex;
+          width: 16px;
+          height: 16px;
+        }
+
+        &.icon-qa {
+          &::before {
+            background: url("../imgs/icon-qa-01.svg") no-repeat center center / contain;
+          }
+        }
+
+        &.icon-user {
+          &::before {
+            background: url("../imgs/icon-user-01.svg") no-repeat center center / contain;
+          }
+        }
+
+        &.icon-mail {
+          &::before {
+            background: url("../imgs/icon-mail-01.svg") no-repeat center center / contain;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      &01 {
+        display: inline-flex;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+
+      &--item {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -11px;
+          width: 100%;
+          height: 2px;
+          background-color: transparent;
+        }
+
+        &.is-active {
+          &::after {
+            background-color: g.$blue02;
+          }
+
+          .l-header__nav--link {
+            color: g.$blue01;
+          }
+        }
+
+      }
+
+      &--link {
+        font-family: g.$font-family02;
+        color: g.$black01;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        letter-spacing: 0.03em;
+
+        &:hover {
+          color: g.$blue01;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "../global/" as g;
+
+.u- {
+  // 最大余白の定義（5px刻み）
+  $max-space: 60;
+  $count: calc($max-space / 5) + 1;
+
+  // 余白の種類
+  $margin-group: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+  );
+
+  // スタイルの定義
+  @mixin margin($direction) {
+    @for $i from 0 to $count {
+      &#{$i * 5} {
+        margin-#{$direction}: 5px * $i !important;
+      }
+    }
+    @for $i from 0 to $count {
+      &--tab {
+        @include g.media(tab) {
+          &#{$i * 5} {
+            margin-#{$direction}: 5px * $i !important;
+          }
+        }
+      }
+    }
+    @for $i from 0 to $count {
+      &--sp {
+        @include g.media(sp) {
+          &#{$i * 5} {
+            margin-#{$direction}: 5px * $i !important;
+          }
+        }
+      }
+    }
+  }
+
+  // スタイル出力
+  @each $class, $value in $margin-group {
+    &m#{$class} {
+      @include margin($value);
+    }
+  }
+}

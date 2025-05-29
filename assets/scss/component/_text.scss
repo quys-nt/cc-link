@@ -1,0 +1,17 @@
+@use "../global/" as g;
+
+.c- {
+  &text {
+    // ここにtextのスタイルを記述
+
+    &__desc {
+      &01 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.8;
+        letter-spacing: 0.02em;
+        color: #3B4043;
+      }
+    }
+  }
+}

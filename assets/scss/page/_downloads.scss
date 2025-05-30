@@ -3,7 +3,7 @@
 .p- {
   &downloads {
     &__inner {
-      padding: 60px 0;
+      padding: 60px 0 80px;
     }
 
     &__list {
@@ -44,7 +44,8 @@
         }
       }
     }
-    &__qa {
+
+    &__faq {
       &--head {
         display: flex;
         align-items: center;
@@ -57,18 +58,23 @@
         color: g.$white01;
         padding: 12px 20px;
         border-radius: 3px;
+        cursor: pointer;
+
         &.is-active {
           background-color: g.$blue02;
-          .p-downloads__qa--icon::after {
-            transform: translate(-50%, -50%) rotate(270deg);
+
+          .p-downloads__faq--icon::after {
+            transform: translate(-50%, -50%);
           }
         }
+
         &:not(.is-active) {
-          & + .p-downloads__qa--body {
+          &+.p-downloads__faq--body {
             display: none;
           }
         }
       }
+
       &--icon {
         position: relative;
         font-size: 0;
@@ -90,31 +96,41 @@
           background-color: g.$blue01;
           transition: transform 0.3s ease;
         }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(270deg);
+        }
       }
+
       &--list {
         display: grid;
         gap: 40px;
         margin-top: 32px;
+
         &02 {
           display: flex;
           flex-wrap: wrap;
           gap: 16px;
           margin-top: 8px;
         }
+
         &03 {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 4px;
         }
       }
+
       &--item {
         display: grid;
         gap: 24px;
       }
+
       &--body {
         display: grid;
         gap: 24px;
       }
+
       &--box {
         &01 {
           display: grid;
@@ -128,14 +144,17 @@
           box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.12);
           border-radius: 6px;
         }
+
         &02 {
           padding-right: 10px;
         }
+
         &03 {
           padding-left: 20px;
           border-left: 2px solid g.$white01;
         }
       }
+
       &--text {
         &01 {
           position: relative;
@@ -145,6 +164,7 @@
           letter-spacing: 0.02em;
           color: g.$blue01;
         }
+
         &02 {
           position: relative;
           display: flex;
@@ -161,20 +181,20 @@
             display: inline-block;
             width: 24px;
             height: 24px;
-            background: url(../imgs/icon-pdf.svg) no-repeat center center /
-              contain;
+            background: url(../imgs/icon-pdf.svg) no-repeat center center / contain;
             margin-right: 6px;
           }
+
           &::after {
             content: "";
             display: inline-block;
             width: 18px;
             height: 18px;
-            background: url(../imgs/icon-link-02.svg) no-repeat center center /
-              contain;
+            background: url(../imgs/icon-link-02.svg) no-repeat center center / contain;
           }
         }
       }
+
       &--tag {
         position: relative;
         font-weight: 700;
@@ -182,6 +202,7 @@
         line-height: 1.3;
         color: g.$black01;
         padding-left: 10px;
+
         &::before {
           content: "";
           position: absolute;
@@ -191,6 +212,7 @@
           height: 4px;
           background-color: g.$blue01;
         }
+
         &02 {
           font-family: g.$font-family02;
           margin-left: 6px;

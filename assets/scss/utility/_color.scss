@@ -9,13 +9,25 @@
       }
     }
   }
-  
+
   // bg
   @each $class, $value in g.$utility-color {
     &bg {
       &--#{$class} {
         background-color: $value !important;
       }
+    }
+  }
+
+  &font {
+    &--01 {
+      font-family: g.$font-family01 !important;
+    }
+    &--02 {
+      font-family: g.$font-family02 !important;
+    }
+    &--03 {
+      font-family: g.$font-family03 !important;
     }
   }
 }

@@ -2,6 +2,49 @@
 
 .c- {
   &list {
+
     // ここにlistのスタイルを記述
+    &__menu {
+      &01 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 60px;
+        list-style-type: none;
+        width: 100%;
+        max-width: 980px;
+        margin-inline: auto;
+
+        li {
+          a {
+            position: relative;
+            font-weight: 500;
+            font-size: 1.3rem;
+            line-height: 1;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            color: g.$white01;
+            padding-right: 17px;
+
+            &::after {
+              content: "";
+              width: 10px;
+              height: 10px;
+
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translateY(-50%);
+
+              background: url(../imgs/icon-arrow-right-small-01.svg) no-repeat center center / contain;
+            }
+
+            &.is-font-02 {
+              font-family: g.$font-family02;
+            }
+          }
+        }
+      }
+    }
   }
 }
